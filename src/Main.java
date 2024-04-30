@@ -1,23 +1,17 @@
-import  java.util.Scanner;
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args)  {
-        Scanner in = new Scanner(System.in);
-        int x = in.nextInt();
-        int amount = 100;
+    public static void main(String[] args) {
+        int amount = 100; //остаток на счете
+        int added = 1100; // пополнение счета
         int bonus = 0;
-
-        if (x <= 1000) {
-            amount += x;
-            System.out.println("Итоговый счёт: " + amount);
+        int newBalance = 0;
+        if (added >= 1000) {
+            bonus = added / 100;
+            newBalance = amount + added + bonus;
+            System.out.println("Вам начислено " + bonus + " бонусных рублей.");
+            System.out.println("На вашем балансе " + newBalance + " рублей.");
         } else {
-            if (x > 1000) {
-                        bonus = x / 100;
-                        amount = amount + x + bonus;
-                                }
-            System.out.println("Итоговый счёт: " + amount);
+            newBalance = amount + added;
+            System.out.println("На вашем балансе " + newBalance + " рублей.");
         }
-        System.out.println("Вам начислено бонусов: " + bonus);
     }
 }
